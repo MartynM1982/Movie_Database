@@ -1,12 +1,19 @@
+# Database set up with some initial movies pre-installed.
 movies = {
   StarWars: 4.8, 
-  Divergent: 4.7
+  Divergent: 4.7,
+  Seven: 4.9,
+  Leon: 4.6,
+  SpiderMan: 4.7,
+  DjangoUnchained: 4.8
 }
 
-puts "What would you like to do? "
+# We now give the user a series of onscreen options
+puts "What would you like to do? add or update or display or delete "
 
 choice = gets.chomp
 
+# based on the choice the user makes we then have a series of if/else
 case choice
 when "add"
   puts "What movie would you like to add? "
@@ -41,5 +48,5 @@ when "delete"
     movies.delete(title.to_sym)
   end
 else
-  puts "Error!"
+  puts "Error! Please choose from one of the options. "
 end
